@@ -287,12 +287,7 @@ footer{
   }
   /*
   # Sections General
-  --------------------------------------------------------------*/
-  section {
-    padding: 60px 0;
-    overflow: hidden;
-  }
-  
+  --------------------------------------------------------------*/  
   .section-bg {
     background-color: #f3f5fa;
   }
