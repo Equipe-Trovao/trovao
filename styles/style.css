@@ -83,6 +83,19 @@ footer{
     height: 200px; 
 }
 
+.imagem-ramificacao {
+    background-image: url('../images/gamificacao-ludos-1.jpg'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center top; 
+    height: 200px; 
+}
+
+.img-sm {
+    max-width: 300px; 
+    height: auto; 
+}
+
  /*--------------------------------------------------------------
   # Contato
   --------------------------------------------------------------*/
