@@ -6,133 +6,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestão de Pessoas</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .question-container {
-            margin: 20px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .question {
-            font-weight: bold;
-        }
-        .options {
-            margin-top: 10px;
-        }
-        .option {
-            margin-right: 10px;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="./images/img_logo.png" alt="Imagem da logo do site">
+                <img src="../images/img_logo.png" alt="Imagem da logo do site">
                 <span class="ml-2">Gestão de Pessoas</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
+
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Início</a>
+                        <a class="nav-link" href="../index.html">Início</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./sobre.html">Sobre</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="sobre.html">Sobre</a>
+                        <a class="nav-link" href="./forum.html">Fórum</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./pages/forum.html">Fórum</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contato</a>
+                        <a class="nav-link" href="./contato.html">Contato</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
+<main>
     <div class="imagem-ramificacao"></div>
 
-    <div class="container text-center mt-4"> <!-- Adicione a classe "text-center" para centralizar o conteúdo -->
-        <h1>Estude, aprenda e contribua para o desenvolvimento da organização que você trabalha! </h1>
-        <p>
-            Compartilhe conhecimentos com seus colegas de trabalho, aprimore seus conhecimentos de uma forma divertida.
-        </p>
-
-        <img class="center img-sm" src="images/arvore do conhecimento.png" alt="">
-
-
-        <h1>Vamos conversar?</h1>
+    <div class="container text-center p-text mt-4">
+        <div class="container text-center mt-4"> <!-- Adicione a classe "text-center" para centralizar o conteúdo -->
+            <h1>Estude, aprenda e contribua para o desenvolvimento da organização que você trabalha! </h1>
+            <p>
+                Compartilhe conhecimentos com seus colegas de trabalho, aprimore seus conhecimentos de uma forma divertida.
+            </p>
     
-        <div class="question-container">
-            <p class="question">Como você se sente em relação ao ambiente de trabalho?</p>
-            <div class="options">
-                <label for="resposta1a" class="option">
-                    <input type="radio" name="resposta1" id="resposta1a" value="Satisfeito"> Satisfeito
-                </label>
-                <label for="resposta1b" class="option">
-                    <input type="radio" name="resposta1" id="resposta1b" value="Neutro"> Neutro
-                </label>
-                <label for="resposta1c" class="option">
-                    <input type="radio" name="resposta1" id="resposta1c" value="Insatisfeito"> Insatisfeito
-                </label>
-            </div>
-        </div>
+            <img class="center img-sm" src="images/arvore do conhecimento.png" alt="">
     
-        <div class="question-container">
-            <p class="question">Você acha que as oportunidades de desenvolvimento são adequadas?</p>
-            <div class="options">
-                <label for="resposta2a" class="option">
-                    <input type="radio" name="resposta2" id="resposta2a" value="Sim"> Sim
-                </label>
-                <label for="resposta2b" class="option">
-                    <input type="radio" name="resposta2" id="resposta2b" value="Não"> Não
-                </label>
-            </div>
-        </div>
     
-        <!-- Adicione mais perguntas conforme necessário -->
-    
-        <button class="btn btn-primary" onclick="submeterRespostas()">Enviar Respostas</button>
-    
-        <script>
-            function submeterRespostas() {
-                const respostas = [];
-                const perguntas = document.querySelectorAll('.question-container');
-                
-                perguntas.forEach((pergunta, index) => {
-                    const inputChecked = pergunta.querySelector('input:checked');
-                    if (inputChecked) {
-                        respostas.push(`Pergunta ${index + 1}: ${pergunta.querySelector('.question').textContent} Resposta: ${inputChecked.value}`);
-                    }
-                });
-                
-                if (respostas.length > 0) {
-                    alert('Respostas enviadas:\n' + respostas.join('\n'));
-                } else {
-                    alert('Por favor, responda às perguntas antes de enviar.');
-                }
-            }
-        </script>
-
-
+            <h1>Vamos conversar?</h1>
         
-
+            <div class="question-container">
+                <p class="question">Como você se sente em relação ao ambiente de trabalho?</p>
+                <div class="options">
+                    <label for="resposta1a" class="option">
+                        <input type="radio" name="resposta1" id="resposta1a" value="Satisfeito"> Satisfeito
+                    </label>
+                    <label for="resposta1b" class="option">
+                        <input type="radio" name="resposta1" id="resposta1b" value="Neutro"> Neutro
+                    </label>
+                    <label for="resposta1c" class="option">
+                        <input type="radio" name="resposta1" id="resposta1c" value="Insatisfeito"> Insatisfeito
+                    </label>
+                </div>
+            </div>
+        
+            <div class="question-container">
+                <p class="question">Você acha que as oportunidades de desenvolvimento são adequadas?</p>
+                <div class="options">
+                    <label for="resposta2a" class="option">
+                        <input type="radio" name="resposta2" id="resposta2a" value="Sim"> Sim
+                    </label>
+                    <label for="resposta2b" class="option">
+                        <input type="radio" name="resposta2" id="resposta2b" value="Não"> Não
+                    </label>
+                </div>
+            </div>
+            <br>
+        
+            <!-- Adicione mais perguntas conforme necessário -->
+        
+            <button class="btn btn-primary" onclick="submeterRespostas()">Enviar Respostas</button>
+        
+            <script>
+                function submeterRespostas() {
+                    const respostas = [];
+                    const perguntas = document.querySelectorAll('.question-container');
+                    
+                    perguntas.forEach((pergunta, index) => {
+                        const inputChecked = pergunta.querySelector('input:checked');
+                        if (inputChecked) {
+                            respostas.push(`Pergunta ${index + 1}: ${pergunta.querySelector('.question').textContent} Resposta: ${inputChecked.value}`);
+                        }
+                    });
+                    
+                    if (respostas.length > 0) {
+                        alert('Respostas enviadas:\n' + respostas.join('\n'));
+                    } else {
+                        alert('Por favor, responda às perguntas antes de enviar.');
+                    }
+                }
+            </script>
     
-
-
     <!-- Cards -->
     <div class="container my-5">
         <div class="row">
@@ -167,12 +145,16 @@
             
         </div>
     </div>
+    <div>
+        
+    
+</main>
 
     <!-- VLibras -->
     <div vw class="enabled position-fixed">
         <div vw-access-button class="active"></div>
         <div vw-plugin-wrapper>
-            <div class="vw-plugin-top-wrapper"></div>
+            <div class="vw-plugin-top-wrapper"></div> 
         </div>
     </div>
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
