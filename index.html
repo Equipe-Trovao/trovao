@@ -8,11 +8,33 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .question-container {
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .question {
+            font-weight: bold;
+        }
+        .options {
+            margin-top: 10px;
+        }
+        .option {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="./images/img_logo.png" alt="Imagem da logo do site">
@@ -22,95 +44,127 @@
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Início</a>
+                        <a class="nav-link" href="#">Início</a>
                     </li>
-
                     <li class="nav-item">
-                        <a class="nav-link" href="./pages/sobre.html">Sobre</a>
+                        <a class="nav-link" href="sobre.html">Sobre</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./pages/forum.html">Fórum</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./pages/contato.html">Contato</a>
+                        <a class="nav-link" href="#">Contato</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
+    <div class="imagem-ramificacao"></div>
+
+    <div class="container text-center mt-4"> <!-- Adicione a classe "text-center" para centralizar o conteúdo -->
+        <h1>Estude, aprenda e contribua para o desenvolvimento da organização que você trabalha! </h1>
+        <p>
+            Compartilhe conhecimentos com seus colegas de trabalho, aprimore seus conhecimentos de uma forma divertida.
+        </p>
+
+        <img class="center img-sm" src="images/arvore do conhecimento.png" alt="">
 
 
-
-    <!-- Carousel/Slides -->
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="https://via.placeholder.com/1200x400" class="d-block w-100" alt="Slide 1">
-            </div>
-
-            <div class="carousel-item">
-                <img src="https://via.placeholder.com/1200x400" class="d-block w-100" alt="Slide 2">
-            </div>
-
-            <div class="carousel-item">
-
-
-                <img src="https://via.placeholder.com/1200x400" class="d-block w-100" alt="Slide 3">
+        <h1>Vamos conversar?</h1>
+    
+        <div class="question-container">
+            <p class="question">Como você se sente em relação ao ambiente de trabalho?</p>
+            <div class="options">
+                <label for="resposta1a" class="option">
+                    <input type="radio" name="resposta1" id="resposta1a" value="Satisfeito"> Satisfeito
+                </label>
+                <label for="resposta1b" class="option">
+                    <input type="radio" name="resposta1" id="resposta1b" value="Neutro"> Neutro
+                </label>
+                <label for="resposta1c" class="option">
+                    <input type="radio" name="resposta1" id="resposta1c" value="Insatisfeito"> Insatisfeito
+                </label>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
+    
+        <div class="question-container">
+            <p class="question">Você acha que as oportunidades de desenvolvimento são adequadas?</p>
+            <div class="options">
+                <label for="resposta2a" class="option">
+                    <input type="radio" name="resposta2" id="resposta2a" value="Sim"> Sim
+                </label>
+                <label for="resposta2b" class="option">
+                    <input type="radio" name="resposta2" id="resposta2b" value="Não"> Não
+                </label>
+            </div>
+        </div>
+    
+        <!-- Adicione mais perguntas conforme necessário -->
+    
+        <button class="btn btn-primary" onclick="submeterRespostas()">Enviar Respostas</button>
+    
+        <script>
+            function submeterRespostas() {
+                const respostas = [];
+                const perguntas = document.querySelectorAll('.question-container');
+                
+                perguntas.forEach((pergunta, index) => {
+                    const inputChecked = pergunta.querySelector('input:checked');
+                    if (inputChecked) {
+                        respostas.push(`Pergunta ${index + 1}: ${pergunta.querySelector('.question').textContent} Resposta: ${inputChecked.value}`);
+                    }
+                });
+                
+                if (respostas.length > 0) {
+                    alert('Respostas enviadas:\n' + respostas.join('\n'));
+                } else {
+                    alert('Por favor, responda às perguntas antes de enviar.');
+                }
+            }
+        </script>
 
 
-        </button>
-    </div>
+        
+
+    
+
 
     <!-- Cards -->
     <div class="container my-5">
         <div class="row">
             <div class="col-lg-4 mb-4">
                 <div class="card">
-                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Card Image 1">
+                    <img src="images/jogo-adm.jpg" class="card-img-top" alt="Card Image 1">
                     <div class="card-body">
-                        <h5 class="card-title">Teste 1</h5>
-                        <p class="card-text">Descrição do teste 1.</p>
-
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-lg-4 mb-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Card Image 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Teste 2</h5>
-                        <p class="card-text">Descrição do teste 2.</p>
+                        <h5 class="card-title">Administração</h5>
+                        <p class="card-text">Jogue e teste seus conhecimentos em Administração, estude de uma forma divertida.</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 mb-4">
                 <div class="card">
-                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Card Image 3">
+                    <img src="images/tecnologia.jpg" class="card-img-top" alt="Card Image 2">
                     <div class="card-body">
-                        <h5 class="card-title">Teste 3</h5>
-                        <p class="card-text">Descrição do teste 3.</p>
+                        <h5 class="card-title">Tecnologia</h5>
+                        <p class="card-text">Explore o mundo da Tecnologia em um jogo interativo, teste seus conhecimentos.</p>
                     </div>
                 </div>
             </div>
-
-
+            <div class="col-lg-4 mb-4">
+                <div class="card">
+                    <img src="images/cursos.jpg" class="card-img-top" alt="Imagem de Curso">
+                    <div class="card-body">
+                        <h5 class="card-title">Cursos Profissionalizantes</h5>
+                        <p class="card-text">Explore nossa seleção de cursos e treinamentos profissionalizantes para aprimorar suas habilidades e avançar em sua carreira na organização.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            
         </div>
     </div>
 
@@ -118,7 +172,7 @@
     <div vw class="enabled position-fixed">
         <div vw-access-button class="active"></div>
         <div vw-plugin-wrapper>
-            <div class="vw-plugin-top-wrapper"></div> 
+            <div class="vw-plugin-top-wrapper"></div>
         </div>
     </div>
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
